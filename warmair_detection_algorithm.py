@@ -144,7 +144,7 @@ def detect_warming_wave(t2m,sic,th,landmask=np.array([]),ende=-10,vlow=4,delta=4
     for jj in np.arange(area_sig.shape[0]):
         for ii in np.arange(sic.shape[0]):
             sic_zw=sic[ii,:,:,:]
-            flag=np.nanmin(sic_zw,axis=(0))>sic_max
+            flag=np.nanmin(sic_zw,axis=(0))>sic_min
             area_sig[jj,ii,flag]=0     
     return area_sum,area_sig
 
